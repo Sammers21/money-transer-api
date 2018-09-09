@@ -29,10 +29,11 @@ public class MainVerticle extends AbstractVerticle {
   private static final int PORT = 8080;
 
   private final UserStorage storage = new InMemoryUserStorage();
+  private HttpServer server;
 
   @Override
   public void start(Future<Void> startFuture) {
-    HttpServer server = vertx.createHttpServer();
+    server = vertx.createHttpServer();
     Router router = Router.router(vertx);
     router.route().handler(this::allResponsesIsJson);
     router.put("/user/:user_id/create-account").handler(this::createNewAccount);
@@ -47,6 +48,18 @@ public class MainVerticle extends AbstractVerticle {
       } else {
         startFuture.fail(asyncResult.cause());
         log.error("Unable to start app on port " + PORT);
+      }
+    });
+  }
+
+  @Override
+  public void stop(Future<Void> stopFuture) {
+    server.close(v -> {
+      if (v.succeeded()) {
+        stopFuture.complete();
+      } else {
+        stopFuture.fail(v.cause());
+        log.error("Unable to stop HTTP server");
       }
     });
   }

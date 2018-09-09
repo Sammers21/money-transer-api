@@ -9,9 +9,10 @@ dependencies {
 
   compile 'io.vertx:vertx-core:3.5.3'
   compile 'io.vertx:vertx-web:3.5.3'
+  compile 'io.vertx:vertx-web-client:3.5.3'
   compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
   compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
-
+  testCompile 'io.vertx:vertx-unit:3.5.3'
 
   // Use JUnit test framework
   testCompile 'junit:junit:4.12'
