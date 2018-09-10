@@ -16,7 +16,7 @@ This app has 5 endpoints:
 
 5. POST /user/:user_id/account/:account_id/transfer-money?sum=<sum>&to_account=<accountId>&to_user=<userId> - to transfer money between accounts
 
-Is is also assumed that there is currencies and excchange rates, only abstact sum of money.
+It is also assumed that there is no currencies, exchange rates and transacction rollbacks, only abstact sums of money.
 
 ## Builing & Running
 

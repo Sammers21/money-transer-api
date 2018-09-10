@@ -17,6 +17,9 @@ import io.vertx.ext.web.RoutingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Entry Verticle.
+ */
 public class MainVerticle extends AbstractVerticle {
 
   private static final Logger log = LoggerFactory.getLogger(MainVerticle.class);
