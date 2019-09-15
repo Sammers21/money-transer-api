@@ -9,6 +9,7 @@ targetCompatibility = 1.11
 
 dependencies {
 
+  compile 'org.javatuples:javatuples:1.2'
   // Vert.x
   compile group: 'io.vertx', name: 'vertx-rx-java2', version: vertx_version
   compile group: 'io.vertx', name: 'vertx-web', version: vertx_version
