@@ -4,6 +4,8 @@ plugins {
 }
 
 mainClassName = 'com.github.sammers21.money.transfer.Main'
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
 
 dependencies {
 
@@ -13,11 +15,11 @@ dependencies {
   compile group: 'io.vertx', name: 'vertx-web-client', version: vertx_version
 
   // Logging
-  compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-  compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+  compile group: 'org.slf4j', name: 'slf4j-api', version: sl4j_version
+  compile group: 'org.slf4j', name: 'slf4j-simple', version: sl4j_version
 
   // Testing
-  testCompile 'junit:junit:4.12'
+  testCompile "junit:junit:$junit_version"
   testCompile group: 'io.vertx', name: 'vertx-unit', version: vertx_version
 }
 
