@@ -8,8 +8,8 @@ public interface Storage {
 
   boolean transferMoney(String fromUserNickName, String toUserNickName, Long sum);
 
-  boolean withdraw(String fromUserNickName, Long sum);
+  boolean withdraw(String userNickName, Long sum);
 
-  boolean contribute(String fromUserNickName, Long sum);
+  boolean contribute(String userNickName, Long sum);
 
 }

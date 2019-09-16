@@ -12,9 +12,9 @@ import org.slf4j.LoggerFactory;
 
 public class Server {
 
-  private final static String NICK_NAME = "nick_name";
-  private final static String SUM = "sum";
-  private final static String TO = "to";
+  public final static String NICK_NAME = "nick_name";
+  public final static String SUM = "sum";
+  public final static String TO = "to";
 
   private static final Logger log = LoggerFactory.getLogger(Server.class);
 

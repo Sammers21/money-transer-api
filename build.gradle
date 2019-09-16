@@ -13,7 +13,6 @@ dependencies {
   // Vert.x
   compile group: 'io.vertx', name: 'vertx-rx-java2', version: vertx_version
   compile group: 'io.vertx', name: 'vertx-web', version: vertx_version
-  compile group: 'io.vertx', name: 'vertx-web-client', version: vertx_version
 
   // Logging
   compile group: 'org.slf4j', name: 'slf4j-api', version: sl4j_version
@@ -22,17 +21,17 @@ dependencies {
   // Testing
   testCompile "junit:junit:$junit_version"
   testCompile group: 'io.vertx', name: 'vertx-unit', version: vertx_version
+  testCompile group: 'io.vertx', name: 'vertx-web-client', version: vertx_version
 }
 
 repositories {
   jcenter()
   mavenCentral()
-  mavenLocal()
 }
 
 jar {
   manifest {
-    attributes "Main-Class": "$mainClassName"
+    attributes "Main-Class": mainClassName
   }
 
   from {
