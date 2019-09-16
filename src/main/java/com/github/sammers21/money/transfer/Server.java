@@ -71,7 +71,7 @@ public class Server {
           }))
       );
     });
-    httpServer.requestHandler(router).listen(port);
+    httpServer.requestHandler(router).rxListen(port).blockingGet();
     log.info("Started on port {}", port);
   }
 
@@ -89,7 +89,7 @@ public class Server {
   }
 
   public synchronized void stop() {
-    httpServer.close();
+    httpServer.rxClose().blockingGet();
   }
 
   private Single<Long> withLong(RoutingContext ctx, String paramName) {

@@ -38,7 +38,7 @@ public class Base {
 
   @After
   public void after() {
-    server.start();
+    server.stop();
   }
 
   private static int findFreePort() {
