@@ -3,31 +3,35 @@ plugins {
   id 'application'
 }
 
-mainClassName = 'com.github.sammers21.Main'
+mainClassName = 'com.github.sammers21.money.transfer.Main'
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
 
 dependencies {
 
-  compile 'io.vertx:vertx-core:3.5.3'
-  compile 'io.vertx:vertx-web:3.5.3'
-  compile 'io.vertx:vertx-web-client:3.5.3'
-  compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-  compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
-  testCompile 'io.vertx:vertx-unit:3.5.3'
+  compile 'org.javatuples:javatuples:1.2'
+  // Vert.x
+  compile group: 'io.vertx', name: 'vertx-rx-java2', version: vertx_version
+  compile group: 'io.vertx', name: 'vertx-web', version: vertx_version
 
-  // Use JUnit test framework
-  testCompile 'junit:junit:4.12'
+  // Logging
+  compile group: 'org.slf4j', name: 'slf4j-api', version: sl4j_version
+  compile group: 'org.slf4j', name: 'slf4j-simple', version: sl4j_version
+
+  // Testing
+  testCompile "junit:junit:$junit_version"
+  testCompile group: 'io.vertx', name: 'vertx-unit', version: vertx_version
+  testCompile group: 'io.vertx', name: 'vertx-web-client', version: vertx_version
 }
 
-// In this section you declare where to find the dependencies of your project
 repositories {
   jcenter()
   mavenCentral()
-  mavenLocal()
 }
 
 jar {
   manifest {
-    attributes "Main-Class": "$mainClassName"
+    attributes "Main-Class": mainClassName
   }
 
   from {

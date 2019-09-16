@@ -4,19 +4,16 @@
 
 ## Design
 
-This app has 5 endpoints:
+This app has 4 endpoints:
 
-1. `PUT /user/<userId>/create-account` - for user and account creation
+1. `GET /user/<nick>` - get user information by nick
+2. `GET /user/<nick>/withdraw?sum=<sum>` - withdraw any sum of money
+3. `GET /user/<nick>/contribute?sum=<sum>` - contribute any sum of money
+4. `GET/user/<nick>/transfer?sum=<sum>&to=<nick>` - transfer money between users
 
-2. `GET /user/<userId>/account/<accountId>` - in order to obtain account information, we can use this endpoint
-
-3. `POST /user/<userId>/account/<accountId>/withdraw?sum=<sum>` - to withdraw any sum of money
-
-4. `POST /user/<userId>/account/<accountId>/contribute?sum=<sum>` - to contribute any sum of money
-
-5. `POST /user/:user_id/account/:account_id/transfer-money?sum=<sum>&to_account=<accountId>&to_user=<userId>` - to transfer money between accounts
-
-It is also assumed that there is no currencies, exchange rates and transaction rollbacks, only abstact sums of money.
+It is also assumed that:
+* there is no currencies, exchange rates, transactions, only abstract sums of money
+* each user is an account itself
 
 ## Builing & Running
 
